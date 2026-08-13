@@ -1,4 +1,4 @@
 export const siteConfig = {
   name: 'BuildCodex',
-  origin: 'https://buildcodex.net'
+  origin: 'https://www.buildcodex.net'
 } as const;

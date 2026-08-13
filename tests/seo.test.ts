@@ -10,12 +10,12 @@ describe('localized SEO metadata', () => {
       description: '六大职业指南'
     });
     expect(metadata.alternates?.canonical?.toString()).toBe(
-      'https://buildcodex.net/zh-CN/mistfall-hunter/classes/'
+      'https://www.buildcodex.net/zh-CN/mistfall-hunter/classes/'
     );
     expect(metadata.alternates?.languages).toEqual({
-      en: 'https://buildcodex.net/mistfall-hunter/classes/',
-      'zh-CN': 'https://buildcodex.net/zh-CN/mistfall-hunter/classes/',
-      'x-default': 'https://buildcodex.net/mistfall-hunter/classes/'
+      en: 'https://www.buildcodex.net/mistfall-hunter/classes/',
+      'zh-CN': 'https://www.buildcodex.net/zh-CN/mistfall-hunter/classes/',
+      'x-default': 'https://www.buildcodex.net/mistfall-hunter/classes/'
     });
   });
 
@@ -24,7 +24,7 @@ describe('localized SEO metadata', () => {
       locale: 'en', pathname: '/mistfall-hunter/', title: 'Mistfall Hunter', description: 'Guide'
     });
     expect(metadata.alternates?.canonical?.toString()).toBe(
-      'https://buildcodex.net/mistfall-hunter/'
+      'https://www.buildcodex.net/mistfall-hunter/'
     );
   });
 });
