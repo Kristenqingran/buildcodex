@@ -1,6 +1,13 @@
 import {NextRequest, NextResponse} from 'next/server';
 
 export default function proxy(request: NextRequest) {
+  if (request.nextUrl.pathname === '/en' || request.nextUrl.pathname.startsWith('/en/')) {
+    const pathname = request.nextUrl.pathname.slice(3) || '/';
+    const destination = new URL(request.url);
+    destination.pathname = pathname;
+    return NextResponse.redirect(destination, 308);
+  }
+
   if (request.nextUrl.pathname === '/') {
     return NextResponse.redirect(new URL('/mistfall-hunter/', request.url), 307);
   }

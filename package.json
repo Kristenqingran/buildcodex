@@ -8,6 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
+    "audit:published": "node scripts/audit-published-content.mjs",
     "test": "vitest run",
     "test:e2e": "playwright test"
   },

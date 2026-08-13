@@ -13,6 +13,11 @@ test('Chinese root redirects once to the localized game landing', async ({page})
   await expect(page.locator('html')).toHaveAttribute('lang', 'zh-CN');
 });
 
+test('internal English locale URL redirects to the canonical public URL', async ({page}) => {
+  await page.goto('/en/mistfall-hunter/classes/');
+  await expect(page).toHaveURL('/mistfall-hunter/classes/');
+});
+
 for (const path of [
   '/mistfall-hunter/',
   '/mistfall-hunter/classes/',
