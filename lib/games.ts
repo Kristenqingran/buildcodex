@@ -20,7 +20,7 @@ const games = {
     routes: {
       home: '/mistfall-hunter/',
       classes: '/mistfall-hunter/classes/',
-      builds: '/mistfall-hunter/#builds',
+      builds: '/mistfall-hunter/builds/',
       weapons: '/mistfall-hunter/#weapons',
       guides: '/mistfall-hunter/#guides',
       bestClass: '/mistfall-hunter/guides/best-class/'

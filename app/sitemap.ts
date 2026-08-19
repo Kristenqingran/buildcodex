@@ -5,6 +5,7 @@ import {absoluteUrl} from '@/lib/seo';
 const indexablePaths = [
   '/mistfall-hunter/',
   '/mistfall-hunter/classes/',
+  '/mistfall-hunter/builds/',
   '/mistfall-hunter/guides/best-class/'
 ] as const;
 
