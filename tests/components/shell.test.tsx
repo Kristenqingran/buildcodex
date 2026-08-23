@@ -11,10 +11,8 @@ describe('localized site shell', () => {
       'href', '/mistfall-hunter/guides/best-class/'
     );
     expect(screen.getByRole('link', {name: 'Builds'})).toHaveAttribute(
-      'href', '/mistfall-hunter/#builds'
+      'href', '/mistfall-hunter/builds/'
     );
-    expect(screen.queryByRole('link', {name: 'Builds', hidden: true}))
-      .not.toHaveAttribute('href', '/mistfall-hunter/builds/');
   });
 
   it('switches locale while preserving the semantic path', () => {

@@ -9,7 +9,7 @@ const forbidden = [
   /mobalytics/i,
   /gamespot/i,
   /example\.com/i,
-  /https?:\/\/(?!www\.buildcodex\.net|store\.steampowered\.com|www\.googletagmanager\.com)/i
+  /https?:\/\/(?!www\.buildcodex\.net|store\.steampowered\.com|www\.googletagmanager\.com|pl30983257\.profitableratecpmnetwork\.com\/fb64f8a45df041e88f19ca037df3a65a\/invoke\.js)/i
 ];
 const extensions = new Set(['.ts', '.tsx', '.js', '.mjs', '.json', '.mdx']);
 const violations = [];

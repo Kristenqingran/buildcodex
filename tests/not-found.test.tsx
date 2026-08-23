@@ -12,7 +12,7 @@ describe('branded 404', () => {
     );
     const related = screen.getByRole('navigation', {name: '相关入口'});
     expect(within(related).getByRole('link', {name: /^配装/})).toHaveAttribute(
-      'href', '/zh-CN/mistfall-hunter/#builds'
+      'href', '/zh-CN/mistfall-hunter/builds/'
     );
   });
 });

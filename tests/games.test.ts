@@ -9,9 +9,9 @@ describe('game registry', () => {
     expect(game.routes.bestClass).toBe('/mistfall-hunter/guides/best-class/');
   });
 
-  it('uses landing anchors for sections without standalone pages', () => {
+  it('uses the Builds page and landing anchors for sections without standalone pages', () => {
     const game = requireGame('mistfall-hunter');
-    expect(game.routes.builds).toBe('/mistfall-hunter/#builds');
+    expect(game.routes.builds).toBe('/mistfall-hunter/builds/');
     expect(game.routes.weapons).toBe('/mistfall-hunter/#weapons');
     expect(game.routes.guides).toBe('/mistfall-hunter/#guides');
   });

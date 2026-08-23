@@ -7,6 +7,8 @@ const expectedUrls = [
   'https://www.buildcodex.net/zh-CN/mistfall-hunter/',
   'https://www.buildcodex.net/mistfall-hunter/classes/',
   'https://www.buildcodex.net/zh-CN/mistfall-hunter/classes/',
+  'https://www.buildcodex.net/mistfall-hunter/builds/',
+  'https://www.buildcodex.net/zh-CN/mistfall-hunter/builds/',
   'https://www.buildcodex.net/mistfall-hunter/guides/best-class/',
   'https://www.buildcodex.net/zh-CN/mistfall-hunter/guides/best-class/'
 ];
