@@ -6,7 +6,7 @@ const scriptSelector = '#adsterra-native-banner-script-fb64f8a45df041e88f19ca037
 const containerSelector = '#container-fb64f8a45df041e88f19ca037df3a65a';
 
 describe('AdsterraNativeBanner', () => {
-  it('loads one script and does not initialize again after a route remount', () => {
+  it('loads one script per mount and initializes again after a route remount', () => {
     const first = render(<AdsterraNativeBanner />);
     const script = document.querySelector<HTMLScriptElement>(scriptSelector);
 
@@ -24,6 +24,6 @@ describe('AdsterraNativeBanner', () => {
     first.unmount();
     render(<AdsterraNativeBanner />);
     expect(document.querySelectorAll(containerSelector)).toHaveLength(1);
-    expect(document.querySelectorAll(scriptSelector)).toHaveLength(0);
+    expect(document.querySelectorAll(scriptSelector)).toHaveLength(1);
   });
 });

@@ -6,8 +6,6 @@ const SCRIPT_ID = 'adsterra-native-banner-script-fb64f8a45df041e88f19ca037df3a65
 const SCRIPT_SRC = 'https://pl30983257.profitableratecpmnetwork.com/fb64f8a45df041e88f19ca037df3a65a/invoke.js';
 const CONTAINER_ID = 'container-fb64f8a45df041e88f19ca037df3a65a';
 
-let scriptRequested = false;
-
 export function AdsterraNativeBanner() {
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -15,14 +13,12 @@ export function AdsterraNativeBanner() {
     const container = containerRef.current;
     if (
       !container ||
-      scriptRequested ||
       document.getElementById(SCRIPT_ID) ||
       container.dataset.adsterraInitialized === 'true'
     ) {
       return;
     }
 
-    scriptRequested = true;
     container.dataset.adsterraInitialized = 'true';
 
     const script = document.createElement('script');
@@ -31,13 +27,19 @@ export function AdsterraNativeBanner() {
     script.async = true;
     script.setAttribute('async', '');
     script.setAttribute('data-cfasync', 'false');
-    script.addEventListener('error', () => {
-      scriptRequested = false;
+    const handleError = () => {
       container.removeAttribute('data-adsterra-initialized');
       script.remove();
-    }, {once: true});
+    };
+    script.addEventListener('error', handleError, {once: true});
 
     container.before(script);
+
+    return () => {
+      script.removeEventListener('error', handleError);
+      script.remove();
+      container.removeAttribute('data-adsterra-initialized');
+    };
   }, []);
 
   return (
