@@ -39,10 +39,33 @@ describe('Adsterra placement', () => {
     );
   });
 
-  it('does not place the native banner in Chinese content', () => {
+  it('appears once at the matching approved position on each Chinese page', () => {
     const marker = '<AdsterraNativeBanner />';
-    for (const page of ['builds', 'classes', 'weapons'] as const) {
-      expect(read('zh-CN', page)).not.toContain(marker);
+    const builds = read('zh-CN', 'builds');
+    const classes = read('zh-CN', 'classes');
+    const weapons = read('zh-CN', 'weapons');
+
+    for (const content of [builds, classes, weapons]) {
+      expect(content.split(marker)).toHaveLength(2);
     }
+
+    expect(builds.indexOf(marker)).toBeGreaterThan(
+      builds.indexOf('## Mistfall Hunter 中"配装"的构成')
+    );
+    expect(builds.indexOf(marker)).toBeLessThan(
+      builds.indexOf('## 佣兵 Mercenary — 均衡耐打的近战')
+    );
+
+    expect(classes.indexOf(marker)).toBeGreaterThan(
+      classes.indexOf('| 凋零骑士 Withered Knight | 重装技术前排 |')
+    );
+    expect(classes.indexOf(marker)).toBeLessThan(classes.indexOf('### 佣兵 Mercenary'));
+
+    expect(weapons.indexOf(marker)).toBeGreaterThan(
+      weapons.indexOf('### 凋零骑士 Withered Knight 武器')
+    );
+    expect(weapons.indexOf(marker)).toBeLessThan(
+      weapons.indexOf('## Mistfall Hunter 武器列表')
+    );
   });
 });
