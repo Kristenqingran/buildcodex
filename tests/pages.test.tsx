@@ -3,6 +3,7 @@ import {describe, expect, it} from 'vitest';
 import {MistfallLanding} from '@/components/pages/mistfall-landing';
 import {ClassesPage} from '@/components/pages/classes-page';
 import {GuidePage} from '@/components/pages/guide-page';
+import {WeaponsPage} from '@/components/pages/weapons-page';
 
 describe('Mistfall Hunter page templates', () => {
   it('renders the approved landing sections in order', () => {
@@ -17,6 +18,13 @@ describe('Mistfall Hunter page templates', () => {
     render(<ClassesPage locale="en" content={<h2>The six classes</h2>} />);
     expect(screen.getByRole('heading', {level: 1, name: /Mistfall Hunter Classes/})).toBeInTheDocument();
     expect(screen.getByRole('heading', {name: 'The six classes'})).toBeInTheDocument();
+    expect(screen.getByText('Choose your path through the Gyldenmist.')).toBeInTheDocument();
+  });
+
+  it('renders the weapons article shell and localized footer', () => {
+    render(<WeaponsPage locale="en" content={<h2>Weapon types by class</h2>} />);
+    expect(screen.getByRole('heading', {level: 1, name: /Mistfall Hunter Weapons/})).toBeInTheDocument();
+    expect(screen.getByRole('heading', {name: 'Weapon types by class'})).toBeInTheDocument();
     expect(screen.getByText('Choose your path through the Gyldenmist.')).toBeInTheDocument();
   });
 

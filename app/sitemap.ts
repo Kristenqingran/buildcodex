@@ -6,6 +6,7 @@ const indexablePaths = [
   '/mistfall-hunter/',
   '/mistfall-hunter/classes/',
   '/mistfall-hunter/builds/',
+  '/mistfall-hunter/weapons/',
   '/mistfall-hunter/guides/best-class/'
 ] as const;
 

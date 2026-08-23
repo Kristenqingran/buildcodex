@@ -21,9 +21,11 @@ test('internal English locale URL redirects to the canonical public URL', async 
 for (const path of [
   '/mistfall-hunter/',
   '/mistfall-hunter/classes/',
+  '/mistfall-hunter/weapons/',
   '/mistfall-hunter/guides/best-class/',
   '/zh-CN/mistfall-hunter/',
   '/zh-CN/mistfall-hunter/classes/',
+  '/zh-CN/mistfall-hunter/weapons/',
   '/zh-CN/mistfall-hunter/guides/best-class/'
 ]) {
   test(`${path} renders canonical and language alternates`, async ({page}) => {
