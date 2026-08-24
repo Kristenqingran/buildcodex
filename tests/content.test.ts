@@ -37,7 +37,7 @@ describe('localized MDX loader', () => {
       await expect(loadContent({locale, game: 'mistfall-hunter', path: 'guides/best-class'}))
         .resolves.not.toBeNull();
       await expect(listGuideSlugs(locale, 'mistfall-hunter'))
-        .resolves.toEqual(['best-class']);
+        .resolves.toEqual(['beginner-guide', 'best-class']);
     }
   });
 

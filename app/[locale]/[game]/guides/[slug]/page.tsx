@@ -30,5 +30,5 @@ export default async function GuideRoute({params}: {params: Promise<{locale: str
   const document = await loadContent({locale, game, path: `guides/${slug}`});
   if (!document) notFound();
   setRequestLocale(locale);
-  return <GuidePage locale={locale as Locale} content={<MdxContent source={document.source} />} />;
+  return <GuidePage locale={locale as Locale} slug={slug} title={document.frontmatter.title} description={document.frontmatter.description} updated={document.frontmatter.updated} content={<MdxContent source={document.source} />} />;
 }

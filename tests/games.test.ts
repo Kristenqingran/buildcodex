@@ -8,6 +8,7 @@ describe('game registry', () => {
     expect(game.routes.classes).toBe('/mistfall-hunter/classes/');
     expect(game.routes.weapons).toBe('/mistfall-hunter/weapons/');
     expect(game.routes.bestClass).toBe('/mistfall-hunter/guides/best-class/');
+    expect(game.routes.beginnerGuide).toBe('/mistfall-hunter/guides/beginner-guide/');
   });
 
   it('uses standalone Builds and Weapons pages and a landing anchor for Guides', () => {

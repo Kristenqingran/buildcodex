@@ -9,7 +9,7 @@ describe('Mistfall Hunter page templates', () => {
   it('renders the approved landing sections in order', () => {
     render(<MistfallLanding locale="en" />);
     expect(screen.getAllByTestId('landing-section').map((node) => node.id)).toEqual([
-      'hero', 'stats', 'overview', 'classes', 'guides', 'builds',
+      'hero', 'overview', 'classes', 'guides', 'builds',
       'featured-guides', 'faq', 'bottom-cta', 'footer'
     ]);
   });
@@ -30,6 +30,31 @@ describe('Mistfall Hunter page templates', () => {
     }
   });
 
+  it('links every class card to its localized class section', () => {
+    const classes = [
+      ['Mercenary', 'mercenary'],
+      ['Sorcerer', 'sorcerer'],
+      ['Blackarrow', 'blackarrow'],
+      ['Shadowstrix', 'shadowstrix'],
+      ['Seer', 'seer'],
+      ['Withered Knight', 'withered-knight']
+    ] as const;
+    const {unmount} = render(<MistfallLanding locale="en" />);
+
+    for (const [name, anchor] of classes) {
+      expect(screen.getByRole('img', {name: `Mistfall Hunter ${name} class`}).closest('a'))
+        .toHaveAttribute('href', `/mistfall-hunter/classes#${anchor}`);
+    }
+
+    unmount();
+    render(<MistfallLanding locale="zh-CN" />);
+
+    for (const [name, anchor] of classes) {
+      expect(screen.getByRole('img', {name: `Mistfall Hunter ${name} class`}).closest('a'))
+        .toHaveAttribute('href', `/zh-CN/mistfall-hunter/classes#${anchor}`);
+    }
+  });
+
   it('renders the classes article shell and localized footer', () => {
     render(<ClassesPage locale="en" content={<h2>The six classes</h2>} />);
     expect(screen.getByRole('heading', {level: 1, name: /Mistfall Hunter Classes/})).toBeInTheDocument();
@@ -45,10 +70,17 @@ describe('Mistfall Hunter page templates', () => {
   });
 
   it('renders guide metadata, contents, recommendation and related content', () => {
-    render(<GuidePage locale="en" content={<h2>Final recommendation</h2>} />);
+    render(<GuidePage locale="en" slug="best-class" title="Mistfall Hunter Best Class" description="Class guide" updated="2026-08-12" content={<h2>Final recommendation</h2>} />);
     expect(screen.getByText('Updated August 12, 2026')).toBeInTheDocument();
     expect(screen.getByRole('navigation', {name: 'Table of contents'})).toBeInTheDocument();
     expect(screen.getByRole('heading', {name: 'Final recommendation'})).toBeInTheDocument();
     expect(screen.getByText('Related content')).toBeInTheDocument();
+  });
+
+  it('renders the beginner guide shell without best-class copy', () => {
+    render(<GuidePage locale="en" slug="beginner-guide" title="SEO title" description="SEO description" updated="2026-08-24" content={<h2>What Is Mistfall Hunter?</h2>} />);
+    expect(screen.getByRole('heading', {level: 1, name: 'Mistfall Hunter Beginner Guide: Survive Your First Runs'})).toBeInTheDocument();
+    expect(screen.getByText('Updated August 24, 2026')).toBeInTheDocument();
+    expect(screen.queryByText('Mistfall Hunter Best Class')).not.toBeInTheDocument();
   });
 });

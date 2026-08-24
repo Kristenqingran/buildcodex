@@ -27,9 +27,11 @@ describe('Adsterra placement', () => {
     );
 
     expect(classes.indexOf(marker)).toBeGreaterThan(
-      classes.indexOf('| Withered Knight | Heavy technical frontline |')
+      classes.indexOf('| Withered Knight | Greatsword; Polearm and Shield |')
     );
-    expect(classes.indexOf(marker)).toBeLessThan(classes.indexOf('### Mercenary'));
+    expect(classes.indexOf(marker)).toBeLessThan(
+      classes.indexOf('<ClassSection name="Mercenary"')
+    );
 
     expect(weapons.indexOf(marker)).toBeGreaterThan(
       weapons.indexOf('### Withered Knight Weapons')
@@ -57,9 +59,11 @@ describe('Adsterra placement', () => {
     );
 
     expect(classes.indexOf(marker)).toBeGreaterThan(
-      classes.indexOf('| 凋零骑士 Withered Knight | 重装技术前排 |')
+      classes.indexOf('| 凋零骑士 Withered Knight | 巨剑；长柄武器和盾 |')
     );
-    expect(classes.indexOf(marker)).toBeLessThan(classes.indexOf('### 佣兵 Mercenary'));
+    expect(classes.indexOf(marker)).toBeLessThan(
+      classes.indexOf('<ClassSection name="佣兵 Mercenary"')
+    );
 
     expect(weapons.indexOf(marker)).toBeGreaterThan(
       weapons.indexOf('### 凋零骑士 Withered Knight 武器')

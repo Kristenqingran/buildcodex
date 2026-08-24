@@ -12,6 +12,8 @@ const expectedUrls = [
   'https://www.buildcodex.net/zh-CN/mistfall-hunter/builds/',
   'https://www.buildcodex.net/mistfall-hunter/weapons/',
   'https://www.buildcodex.net/zh-CN/mistfall-hunter/weapons/',
+  'https://www.buildcodex.net/mistfall-hunter/guides/beginner-guide/',
+  'https://www.buildcodex.net/zh-CN/mistfall-hunter/guides/beginner-guide/',
   'https://www.buildcodex.net/mistfall-hunter/guides/best-class/',
   'https://www.buildcodex.net/zh-CN/mistfall-hunter/guides/best-class/'
 ];
