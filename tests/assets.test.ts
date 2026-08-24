@@ -1,4 +1,5 @@
 import {readdir, readFile} from 'node:fs/promises';
+import {access} from 'node:fs/promises';
 import path from 'node:path';
 import {describe, expect, it} from 'vitest';
 
@@ -13,5 +14,19 @@ describe('official asset source manifest', () => {
     }
     expect(manifest).toMatch(/https:\/\/(?:store\.steampowered\.com|shared\.[a-z]+\.steamstatic\.com|mistfallhunter\.com)/);
     expect(manifest).toContain('Usage');
+  });
+
+  it('provides the complete BuildCodex site icon set', async () => {
+    const files = [
+      'app/favicon.ico',
+      'app/icon.png',
+      'app/apple-icon.png',
+      'public/icons/buildcodex-icon-48.png',
+      'public/icons/buildcodex-icon-192.png',
+      'public/icons/buildcodex-icon-512.png',
+      'public/icons/buildcodex-icon.svg'
+    ];
+
+    await Promise.all(files.map((file) => access(path.join(process.cwd(), file))));
   });
 });

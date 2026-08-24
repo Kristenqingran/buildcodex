@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title">
+  <title id="title">BuildCodex BC diamond</title>
+  <rect width="512" height="512" fill="#05030c"/>
+  <path d="M256 56 456 256 256 456 56 256Z" fill="#05030c" stroke="#9b6cff" stroke-width="10"/>
+  <text x="256" y="289" fill="#c6a8ff" font-family="Inter, Arial, sans-serif" font-size="94" font-weight="900" text-anchor="middle">BC</text>
+</svg>

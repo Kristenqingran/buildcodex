@@ -1,6 +1,7 @@
 import {describe, expect, it} from 'vitest';
 import robots from '@/app/robots';
 import sitemap from '@/app/sitemap';
+import manifest from '@/app/manifest';
 
 const expectedUrls = [
   'https://www.buildcodex.net/mistfall-hunter/',
@@ -24,6 +25,18 @@ describe('metadata routes', () => {
     expect(robots()).toEqual({
       rules: {userAgent: '*', allow: '/'},
       sitemap: 'https://www.buildcodex.net/sitemap.xml'
+    });
+  });
+
+  it('publishes installable BuildCodex icon metadata', () => {
+    expect(manifest()).toMatchObject({
+      name: 'BuildCodex',
+      short_name: 'BuildCodex',
+      start_url: '/',
+      icons: [
+        {src: '/icons/buildcodex-icon-192.png', sizes: '192x192', type: 'image/png'},
+        {src: '/icons/buildcodex-icon-512.png', sizes: '512x512', type: 'image/png'}
+      ]
     });
   });
 });

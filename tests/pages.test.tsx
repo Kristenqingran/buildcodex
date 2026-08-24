@@ -14,6 +14,22 @@ describe('Mistfall Hunter page templates', () => {
     ]);
   });
 
+  it('renders a dedicated image with accurate alt text for all six class cards', () => {
+    render(<MistfallLanding locale="en" />);
+    const expectedImages = [
+      ['Mistfall Hunter Mercenary class', 'mercenary.webp'],
+      ['Mistfall Hunter Sorcerer class', 'sorcerer.webp'],
+      ['Mistfall Hunter Blackarrow class', 'blackarrow.webp'],
+      ['Mistfall Hunter Shadowstrix class', 'shadowstrix.webp'],
+      ['Mistfall Hunter Seer class', 'seer.webp'],
+      ['Mistfall Hunter Withered Knight class', 'withered-knight.webp']
+    ] as const;
+
+    for (const [alt, filename] of expectedImages) {
+      expect(screen.getByRole('img', {name: alt})).toHaveAttribute('src', expect.stringContaining(filename));
+    }
+  });
+
   it('renders the classes article shell and localized footer', () => {
     render(<ClassesPage locale="en" content={<h2>The six classes</h2>} />);
     expect(screen.getByRole('heading', {level: 1, name: /Mistfall Hunter Classes/})).toBeInTheDocument();
