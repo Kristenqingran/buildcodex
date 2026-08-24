@@ -6,6 +6,7 @@ export type GameRoutes = {
   guides: string;
   bestClass: string;
   beginnerGuide: string;
+  cipherGuide: string;
 };
 
 export type GameConfig = {
@@ -25,7 +26,8 @@ const games = {
       weapons: '/mistfall-hunter/weapons/',
       guides: '/mistfall-hunter/#guides',
       bestClass: '/mistfall-hunter/guides/best-class/',
-      beginnerGuide: '/mistfall-hunter/guides/beginner-guide/'
+      beginnerGuide: '/mistfall-hunter/guides/beginner-guide/',
+      cipherGuide: '/mistfall-hunter/guides/cipher-guide/'
     }
   }
 } satisfies Record<string, GameConfig>;

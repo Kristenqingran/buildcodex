@@ -1,4 +1,4 @@
-import {render, screen} from '@testing-library/react';
+import {render, screen, within} from '@testing-library/react';
 import {describe, expect, it} from 'vitest';
 import {MistfallLanding} from '@/components/pages/mistfall-landing';
 import {ClassesPage} from '@/components/pages/classes-page';
@@ -82,5 +82,23 @@ describe('Mistfall Hunter page templates', () => {
     expect(screen.getByRole('heading', {level: 1, name: 'Mistfall Hunter Beginner Guide: Survive Your First Runs'})).toBeInTheDocument();
     expect(screen.getByText('Updated August 24, 2026')).toBeInTheDocument();
     expect(screen.queryByText('Mistfall Hunter Best Class')).not.toBeInTheDocument();
+  });
+
+  it('renders the Cipher Guide shell and links the homepage card to it', () => {
+    const {unmount} = render(<GuidePage locale="en" slug="cipher-guide" title="Mistfall Hunter Cipher Guide" description="Cipher guide" updated="2026-08-25" content={<h2>How Ciphers Work</h2>} />);
+    expect(screen.getByRole('heading', {level: 1, name: 'Mistfall Hunter Cipher Guide'})).toBeInTheDocument();
+    const toc = screen.getByRole('navigation', {name: 'Table of contents'});
+    expect(within(toc).getAllByRole('link')).toHaveLength(4);
+    unmount();
+
+    const landing = render(<MistfallLanding locale="en" />);
+    expect(screen.getByRole('link', {name: 'OPEN CIPHER GUIDE →'}))
+      .toHaveAttribute('href', '/mistfall-hunter/guides/cipher-guide');
+    expect(screen.getAllByText('Mistfall Hunter Cipher Guide')).toHaveLength(2);
+    landing.unmount();
+
+    render(<MistfallLanding locale="zh-CN" />);
+    expect(screen.getByRole('link', {name: '打开密文指南 →'}))
+      .toHaveAttribute('href', '/zh-CN/mistfall-hunter/guides/cipher-guide');
   });
 });

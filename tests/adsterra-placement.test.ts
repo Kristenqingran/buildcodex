@@ -8,6 +8,11 @@ describe('Adsterra placement', () => {
       path.join(process.cwd(), `content/${locale}/mistfall-hunter/${page}.mdx`),
       'utf8'
     );
+  const readCipherGuide = (locale: 'en' | 'zh-CN') =>
+    fs.readFileSync(
+      path.join(process.cwd(), `content/${locale}/mistfall-hunter/guides/cipher-guide.mdx`),
+      'utf8'
+    );
 
   it('appears once at the approved position on each English page', () => {
     const marker = '<AdsterraNativeBanner />';
@@ -70,6 +75,26 @@ describe('Adsterra placement', () => {
     );
     expect(weapons.indexOf(marker)).toBeLessThan(
       weapons.indexOf('## Mistfall Hunter 武器列表')
+    );
+  });
+
+  it('appears once between the keyword reference and deciphering flow on each Cipher Guide', () => {
+    const marker = '<AdsterraNativeBanner />';
+    const english = readCipherGuide('en');
+    const chinese = readCipherGuide('zh-CN');
+
+    for (const content of [english, chinese]) {
+      expect(content.split(marker)).toHaveLength(2);
+      expect(content.indexOf(marker)).toBeGreaterThan(
+        content.indexOf('| Mineral Vein + Oathbound | Blacksmith |')
+      );
+    }
+
+    expect(english.indexOf(marker)).toBeLessThan(
+      english.indexOf('## How to Decipher a Cipher')
+    );
+    expect(chinese.indexOf(marker)).toBeLessThan(
+      chinese.indexOf('## 如何解读密文')
     );
   });
 });

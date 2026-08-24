@@ -26,6 +26,12 @@ const guideCopy = {
       title: 'Mistfall Hunter Beginner Guide: Survive Your First Runs',
       description: 'Prepare a low-risk loadout, understand extraction and turn your first successful runs into steady progress.',
       toc: ['What Is Mistfall Hunter?','What to Do Before Your First Run','Your First Loadout','How Extraction Works','Early Progression Priorities','Choosing Your First Class','Weapons and Gear Basics','Solo vs Trio for Beginners','Beginner Mistakes to Avoid','What to Learn Next','Mistfall Hunter Beginner FAQ']
+    },
+    'cipher-guide': {
+      eyebrow: 'FIELD GUIDE · CIPHERS',
+      title: 'Mistfall Hunter Cipher Guide',
+      description: 'Learn how Ciphers work, where to use them, and which NPC matches each Cipher.',
+      toc: ['How Ciphers Work','Cipher NPC & Keyword Matches','How to Decipher a Cipher','Rewards & Common Questions']
     }
   },
   'zh-CN': {
@@ -40,6 +46,12 @@ const guideCopy = {
       title: 'Mistfall Hunter 新手指南：完成你的首次成功撤离',
       description: '准备一套低风险装备，理解撤离机制，并把前几次成功出猎转化为稳定进度。',
       toc: ['Mistfall Hunter 是什么？','第一次出猎前该做什么','你的第一套出猎装备','撤离机制如何运作','前期进度优先级','选择你的第一个职业','武器与装备基础','新手应该单人还是三人组队','新手常见错误','接下来学习什么','Mistfall Hunter 新手常见问题']
+    },
+    'cipher-guide': {
+      eyebrow: '实用指南 · 密文',
+      title: 'Mistfall Hunter 密文指南',
+      description: '了解密文如何运作、应在哪里使用，以及每个密文对应哪位 NPC。',
+      toc: ['密文如何运作','密文 NPC 与关键词对应','如何解读密文','奖励与常见问题']
     }
   }
 } as const;

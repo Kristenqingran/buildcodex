@@ -14,3 +14,7 @@ All files below are local WebP conversions of publicly displayed promotional scr
 | `mistfall-hunter-classes-guide-card.webp` | [Steam screenshot 4](https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3282300/22febb6fbbffff8e4c05145d242c9d30b0838e9f/ss_22febb6fbbffff8e4c05145d242c9d30b0838e9f.1920x1080.jpg) | Start Your Journey classes card; 1200×675 derivative |
 
 Store listing: [Mistfall Hunter on Steam](https://store.steampowered.com/app/3282300/Mistfall_Hunter/).
+# Cipher Guide
+
+- `guides/cipher/cipher-keywords.webp` — user-supplied in-game screenshot from Mistfall Hunter; converted to WebP without cropping or altering the screenshot content.
+- `guides/cipher/cipher-decipher-menu.webp` — user-supplied in-game screenshot from Mistfall Hunter; converted to WebP without cropping or altering the screenshot content.

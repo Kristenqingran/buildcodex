@@ -36,8 +36,17 @@ describe('localized MDX loader', () => {
         .resolves.not.toBeNull();
       await expect(loadContent({locale, game: 'mistfall-hunter', path: 'guides/best-class'}))
         .resolves.not.toBeNull();
+      await expect(loadContent({locale, game: 'mistfall-hunter', path: 'guides/cipher-guide'}))
+        .resolves.toMatchObject({
+          frontmatter: {
+            images: [
+              '/assets/mistfall-hunter/guides/cipher/cipher-keywords.webp',
+              '/assets/mistfall-hunter/guides/cipher/cipher-decipher-menu.webp'
+            ]
+          }
+        });
       await expect(listGuideSlugs(locale, 'mistfall-hunter'))
-        .resolves.toEqual(['beginner-guide', 'best-class']);
+        .resolves.toEqual(['beginner-guide', 'best-class', 'cipher-guide']);
     }
   });
 
