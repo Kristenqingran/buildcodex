@@ -1,9 +1,10 @@
 import {describe, expect, it} from 'vitest';
-import {siteConfig} from '@/lib/site-content';
+import {siteConfig, sectionSlugs} from '@/lib/site-content';
 
-describe('empty site scaffold', () => {
-  it('exposes the initial site identity', () => {
+describe('BuildCodex content site', () => {
+  it('exposes the site identity and four content sections', () => {
     expect(siteConfig.name).toBe('BuildCodex');
     expect(siteConfig.description).toContain('Codex');
+    expect(sectionSlugs).toHaveLength(4);
   });
 });
