@@ -1,16 +1,11 @@
 import type {Metadata} from 'next';
 import './globals.css';
-import {siteContent} from '@/lib/site-content';
 
 export const metadata: Metadata = {
-  title: siteContent.name,
-  description: siteContent.tagline
+  title: {default: 'BuildCodex', template: '%s · BuildCodex'},
+  description: 'Practical notes on Codex, AI agents, and building with them.'
 };
 
 export default function RootLayout({children}: Readonly<{children: React.ReactNode}>) {
-  return (
-    <html lang="en">
-      <body>{children}</body>
-    </html>
-  );
+  return <html lang="en"><body>{children}</body></html>;
 }
