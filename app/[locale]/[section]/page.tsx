@@ -1,5 +1,6 @@
 import type {Metadata} from 'next';
 import {notFound} from 'next/navigation';
+import {Link} from '@/i18n/navigation';
 import {getTutorials} from '@/lib/content';
 import {EmptyState} from '@/components/empty-state';
 import {TutorialCard} from '@/components/tutorial-card';
@@ -15,5 +16,5 @@ export async function generateMetadata({params}: PageProps<'/[locale]/[section]'
 
 export default async function SectionPage({params}: PageProps<'/[locale]/[section]'>) {
   const {locale, section} = await params; const typedSection = getSection(section); const typedLocale = locale as Locale; const text = getCopy(typedLocale); const tutorials = await getTutorials(typedLocale, typedSection);
-  return <main className="content-page"><section className="page-heading"><p className="eyebrow">BuildCodex / {sections[typedSection].label[typedLocale]}</p><h1>{sections[typedSection].label[typedLocale]}</h1><p className="lede">{sections[typedSection].description[typedLocale]}</p></section>{tutorials.length ? <div className="tutorial-grid">{tutorials.map((tutorial) => <TutorialCard key={tutorial.slug} tutorial={tutorial} section={typedSection}/>)}</div> : <EmptyState title={text.emptyTitle} body={text.emptyBody}/>}</main>;
+  return <main className="content-page"><Link className="back-link" href="/">← {typedLocale === 'en' ? 'Home' : '首页'}</Link><section className="page-heading"><p className="lede">{sections[typedSection].description[typedLocale]}</p></section>{tutorials.length ? <div className="tutorial-grid">{tutorials.map((tutorial) => <TutorialCard key={tutorial.slug} tutorial={tutorial} section={typedSection}/>)}</div> : <EmptyState title={text.emptyTitle} body={text.emptyBody}/>}</main>;
 }

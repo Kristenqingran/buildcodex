@@ -7,6 +7,7 @@ import type {Locale, SectionSlug} from './site-content';
 
 const contentRoot = path.join(process.cwd(), 'content');
 export type TutorialSummary = TutorialFrontmatter;
+export type TutorialWithSection = {tutorial: TutorialSummary; section: SectionSlug};
 
 async function tutorialDirectory(locale: Locale, section: SectionSlug | 'tutorials' = 'tutorials') { return path.join(contentRoot, locale, section); }
 
@@ -19,7 +20,12 @@ export async function getTutorials(locale: Locale, section: SectionSlug | 'tutor
     const parsed = matter(source);
     return tutorialFrontmatterSchema.parse({...parsed.data, slug: parsed.data.slug ?? file.replace(/\.(md|mdx)$/, '')});
   }));
-  return tutorials.sort((a, b) => (b.publishedAt ?? '').localeCompare(a.publishedAt ?? ''));
+  return tutorials.sort((a, b) => (b.updatedAt ?? b.publishedAt ?? '').localeCompare(a.updatedAt ?? a.publishedAt ?? ''));
+}
+
+export async function getLatestTutorials(locale: Locale, limit = 3): Promise<TutorialWithSection[]> {
+  const grouped = await Promise.all((['codex-tools', 'agent-building', 'agent-evaluation', 'field-notes'] as SectionSlug[]).map(async (section) => ({section, tutorials: await getTutorials(locale, section)})));
+  return grouped.flatMap(({section, tutorials}) => tutorials.map((tutorial) => ({tutorial, section}))).sort((a, b) => (b.tutorial.updatedAt ?? b.tutorial.publishedAt ?? '').localeCompare(a.tutorial.updatedAt ?? a.tutorial.publishedAt ?? '')).slice(0, limit);
 }
 
 export async function getTutorial(locale: Locale, slug: string, section: SectionSlug | 'tutorials' = 'tutorials') {
