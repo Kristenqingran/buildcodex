@@ -32,11 +32,11 @@ export const sections: Record<SectionSlug, {label: Record<Locale, string>; descr
 
 export const copy = {
   en: {
-    search: 'Search', language: 'Language', eyebrow: 'Notes from the workbench', title: 'Learn by building with Codex and AI agents.', intro: 'Practical tutorials, workflows, and verified field notes from learning, trying, and building.', browse: 'Browse the library',
+    search: 'Search', language: 'Language', eyebrow: 'Notes from the workbench', title: 'Learn by building with Codex and AI agents.', intro: 'Practical tutorials, workflows, and verified field notes from learning, trying, and building.',
     featured: 'Featured notes', latest: 'Latest notes', emptyTitle: 'Articles are coming soon.', emptyBody: 'The content library is ready for the first field notes. No articles have been published yet.', tutorialsTitle: 'All notes', tutorialsIntro: 'A growing library of practical notes and experiments.', searchTitle: 'Search the library', searchPlaceholder: 'Search by title or description', searchEmpty: 'No matching notes yet.'
   },
   'zh-CN': {
-    search: '搜索', language: '语言', eyebrow: '工作台笔记', title: '用 Codex 和 AI Agent 边做边学。', intro: '记录实际学习、尝试和验证过的教程、工作流与工具实践。', browse: '浏览内容',
+    search: '搜索', language: '语言', eyebrow: '工作台笔记', title: '用 Codex 和 AI Agent 边做边学。', intro: '记录实际学习、尝试和验证过的教程、工作流与工具实践。',
     featured: '精选内容', latest: '最新文章', emptyTitle: '文章即将上线。', emptyBody: '内容承载结构已经准备好，首批实践笔记将在整理后发布。', tutorialsTitle: '全部内容', tutorialsIntro: '持续整理中的实践笔记与工作流记录。', searchTitle: '搜索内容库', searchPlaceholder: '按标题或简介搜索', searchEmpty: '暂时没有匹配的文章。'
   }
 } as const;
