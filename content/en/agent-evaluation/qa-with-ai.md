@@ -1,6 +1,6 @@
 ---
-title: QA with AI: From Traditional Testing to Quality Engineering
-description: A practical guide to using AI across requirements, risk analysis, test design, execution, triage, regression, and Agent evaluation while keeping human review and verifiable evidence.
+title: 'QA with AI: From Traditional Testing to Quality Engineering'
+description: 'A practical guide to using AI across requirements, risk analysis, test design, execution, triage, regression, and Agent evaluation while keeping human review and verifiable evidence.'
 category: Methodology
 slug: qa-with-ai
 publishedAt: '2026-09-30'
