@@ -23,7 +23,7 @@ export async function getTutorials(locale: Locale, section: SectionSlug | 'tutor
   return tutorials.sort((a, b) => (b.updatedAt ?? b.publishedAt ?? '').localeCompare(a.updatedAt ?? a.publishedAt ?? ''));
 }
 
-export async function getLatestTutorials(locale: Locale, limit = 3): Promise<TutorialWithSection[]> {
+export async function getLatestTutorials(locale: Locale, limit = 4): Promise<TutorialWithSection[]> {
   const grouped = await Promise.all((['codex-tools', 'agent-building', 'agent-evaluation', 'field-notes'] as SectionSlug[]).map(async (section) => ({section, tutorials: await getTutorials(locale, section)})));
   return grouped.flatMap(({section, tutorials}) => tutorials.map((tutorial) => ({tutorial, section}))).sort((a, b) => (b.tutorial.updatedAt ?? b.tutorial.publishedAt ?? '').localeCompare(a.tutorial.updatedAt ?? a.tutorial.publishedAt ?? '')).slice(0, limit);
 }
