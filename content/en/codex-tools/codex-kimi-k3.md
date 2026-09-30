@@ -6,8 +6,6 @@ slug: codex-kimi-k3
 publishedAt: '2026-09-28'
 ---
 
-# Install Codex from Scratch and Connect Kimi K3
-
 For people who know only basic computer operations, live in mainland China, and want to use Codex and Kimi K3 on Windows or Mac. Checked on September 28, 2026. Software interfaces may change; look for buttons by meaning when labels differ.
 
 > **Important correction: I cannot guarantee that every software product can be downloaded or used in mainland China.** OpenAI's currently published ChatGPT/API supported-country list does not include mainland China. Obtaining a desktop installer elsewhere does not guarantee account login or service availability. Complete the “Mainland environment check” below first. If the ChatGPT desktop app is unavailable, you can still try **Codex CLI + a Kimi Open Platform API key**; if the Codex CLI package cannot be obtained either, it would not be accurate to promise a local “Codex + Kimi” setup. Do not buy unofficial “domestic versions” or shared accounts.

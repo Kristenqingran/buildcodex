@@ -6,8 +6,6 @@ slug: claude-effective-guide
 publishedAt: '2026-09-29'
 ---
 
-# Claude 高效使用完整指南
-
 > 原文作者：Anatoli Kopadze；中文完整翻译版。原文来源：[@AnatoliKopadze on X](https://x.com/AnatoliKopadze)。本文中的比例和经验性判断保留原文归属，BuildCodex 未独立验证。
 
 原文认为，大多数人只使用了 Claude 的一小部分能力。它给出的主线不是寻找更多零散技巧，而是先让 Claude 理解你，再把它用作持续的工作伙伴。软件界面可能更新，按钮名称请按含义寻找。

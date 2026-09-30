@@ -6,8 +6,6 @@ slug: qa-with-ai
 publishedAt: '2026-09-30'
 ---
 
-# QA with AI: From Traditional Testing to Quality Engineering
-
 AI can expand QA's analysis and execution capacity, but quality decisions still require clear expectations, trustworthy evidence, and human review. This article places AI inside the real software quality workflow: requirements, risk analysis, test design, automation, execution, bug analysis, regression, and Agent evaluation.
 
 ## What this article covers

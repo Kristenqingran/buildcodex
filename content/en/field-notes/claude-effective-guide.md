@@ -6,8 +6,6 @@ slug: claude-effective-guide
 publishedAt: '2026-09-29'
 ---
 
-# A Practical Guide to Using Claude More Effectively
-
 > Original author: Anatoli Kopadze; complete English edition based on the supplied Chinese document. Source: [@AnatoliKopadze on X](https://x.com/AnatoliKopadze). The percentages and experience-based judgments below are retained as claims from the source; BuildCodex has not independently verified them.
 
 The source argues that most people use only a small portion of Claude's capabilities. Its central idea is not to collect isolated tricks, but to help Claude understand you and then use it as a continuing work partner. Interfaces may change, so look for controls by meaning when labels differ.
