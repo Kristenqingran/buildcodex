@@ -40,3 +40,16 @@ export async function getTutorial(locale: Locale, slug: string, section: Section
   }
   notFound();
 }
+
+export async function hasTutorial(locale: Locale, slug: string, section: SectionSlug | 'tutorials' = 'tutorials') {
+  const directory = await tutorialDirectory(locale, section);
+  for (const extension of ['.mdx', '.md']) {
+    try {
+      await fs.access(path.join(directory, `${slug}${extension}`));
+      return true;
+    } catch (error) {
+      if ((error as NodeJS.ErrnoException).code !== 'ENOENT') throw error;
+    }
+  }
+  return false;
+}

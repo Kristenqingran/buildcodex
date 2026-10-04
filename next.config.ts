@@ -2,7 +2,8 @@ import type {NextConfig} from 'next';
 import createNextIntlPlugin from 'next-intl/plugin';
 
 const nextConfig: NextConfig = {
-  reactStrictMode: true
+  reactStrictMode: true,
+  trailingSlash: true
 };
 
 export default createNextIntlPlugin('./i18n/request.ts')(nextConfig);
