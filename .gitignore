@@ -4,6 +4,7 @@
 !.env.example
 node_modules/
 .next/
+.vercel/
 test-results/
 playwright-report/
 *.tsbuildinfo
