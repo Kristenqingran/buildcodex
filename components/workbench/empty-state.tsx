@@ -1,0 +1,1 @@
+export function WorkbenchEmptyState({title, body}: {title: string; body: string}) { return <section className="workbench-empty-state"><span className="empty-state-mark" aria-hidden="true">＋</span><h2>{title}</h2><p>{body}</p></section>; }

@@ -375,15 +375,14 @@ Review / export / optional indexing
 
 ## 参考资料与适用范围
 
-这篇教程综合提炼了开源项目 [TestLoom](https://github.com/saurabh-oss/testloom) 的工程组织思路，尤其是 `src/` 布局、`pyproject.toml`、开发依赖、CLI、测试、Makefile、GitHub Actions，以及其在测试用例生成中划分 gateway、generator、store、formatter 等模块的方法。文章的 `sampleqa` 代码是独立编写的教学示例，**不是该仓库的官方安装手册**。
+这篇教程综合提炼了开源项目[仓库](https://github.com/saurabh-oss/testloom)的工程组织思路，尤其是 `src/` 布局、`pyproject.toml`、开发依赖、CLI、测试、Makefile、GitHub Actions，以及其在测试用例生成中划分 gateway、generator、store、formatter 等模块的方法。文章的 `sampleqa` 代码是独立编写的教学示例，**不是该仓库的官方安装手册**。
 
 参考仓库 README 将 LLM Gateway、RAG、命令行与多种格式输出列为能力，并将多智能体评审及 REST/Web UI 放在后续路线图中；因此不要将路线图功能误写为已经交付。
 
-- [TestLoom GitHub Repository](https://github.com/saurabh-oss/testloom)
+- [GitHub Repository](https://github.com/saurabh-oss/testloom)
 - [Python Packaging User Guide](https://packaging.python.org/)
 - [pytest Documentation](https://docs.pytest.org/)
 - [Ruff Documentation](https://docs.astral.sh/ruff/)
 - [GitHub Actions Documentation](https://docs.github.com/en/actions)
 
 **建议下一篇延伸阅读**：如何用 Python + LLM 将需求文档自动转换为结构化测试用例（从 Gateway、Prompt、Pydantic Schema 到质量评测）。
-

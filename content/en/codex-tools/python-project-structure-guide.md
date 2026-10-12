@@ -294,9 +294,9 @@ Generating test cases and executing test cases are different capabilities. Expor
 
 ## References and scope
 
-This tutorial distills engineering organization ideas from the open-source [TestLoom repository](https://github.com/saurabh-oss/testloom), especially its `src/` layout, `pyproject.toml`, development dependencies, CLI, testing, Makefile, GitHub Actions, and separation of gateway, generator, store, and formatter concerns. The `sampleqa` code here is an independently written teaching example, not the repository's official installation manual.
+This tutorial distills engineering organization ideas from an open-source [repository](https://github.com/saurabh-oss/testloom), especially its `src/` layout, `pyproject.toml`, development dependencies, CLI, testing, Makefile, GitHub Actions, and separation of gateway, generator, store, and formatter concerns. The `sampleqa` code here is an independently written teaching example, not the repository's official installation manual.
 
-- [TestLoom GitHub Repository](https://github.com/saurabh-oss/testloom)
+- [GitHub Repository](https://github.com/saurabh-oss/testloom)
 - [Python Packaging User Guide](https://packaging.python.org/)
 - [pytest Documentation](https://docs.pytest.org/)
 - [Ruff Documentation](https://docs.astral.sh/ruff/)
