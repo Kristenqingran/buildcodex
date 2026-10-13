@@ -1,6 +1,7 @@
 import {Link} from '@/i18n/navigation';
 import {getWorkbenchCopy, workbenchNavigation} from '@/lib/workbench';
 import type {Locale} from '@/lib/site-content';
+import {WorkbenchConnectionStatus} from './connection-status';
 
 export function WorkbenchShell({locale, activeHref, children}: {locale: Locale; activeHref?: string; children: React.ReactNode}) {
   const copy = getWorkbenchCopy(locale);
@@ -16,7 +17,7 @@ export function WorkbenchShell({locale, activeHref, children}: {locale: Locale; 
           <Link className={activeHref === '/workbench/runs/' ? 'active' : undefined} href="/workbench/runs/"><span aria-hidden="true">◷</span>{workbenchNavigation[3].label[locale]}</Link>
           <span className="disabled"><span aria-hidden="true">♧</span>{locale === 'zh-CN' ? '工作流（即将推出）' : 'Workflows (Coming soon)'}</span>
         </nav>
-        <div className="workbench-agent-card"><span>{copy.agent}</span><small>{copy.agentBody}</small><b>{copy.status}</b></div>
+        <div className="workbench-agent-card"><span>{copy.agent}</span><small>{copy.agentBody}</small><WorkbenchConnectionStatus locale={locale}/></div>
       </aside>
       <div className="workbench-content">{children}</div>
     </div>

@@ -12,7 +12,7 @@ export default function proxy(request: NextRequest) {
     url.hostname = 'www.buildcodex.net';
     return NextResponse.redirect(url, 308);
   }
-  if (url.pathname.startsWith('/_next/') || /\/[^/]*\.[^/]+$/.test(url.pathname)) return NextResponse.next();
+  if (url.pathname.startsWith('/api/') || url.pathname.startsWith('/_next/') || /\/[^/]*\.[^/]+$/.test(url.pathname)) return NextResponse.next();
   return intlMiddleware(request);
 }
 
